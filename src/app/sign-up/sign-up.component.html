@@ -1,0 +1,75 @@
+<div class="container">
+
+  <div class="jumbotron py-3">
+    <h2 class="h2 text-center mb-0">Sign Up with us</h2>
+  </div>
+
+  <form #signUpForm="ngForm" (ngSubmit)="signUpSubmit(signUpForm)">
+
+
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">First and last name</span>
+        </div>
+        <input type="text" aria-label="First name" class="form-control" name="firstName" #firstName="ngModel"
+          [(ngModel)]="user.firstName" required>
+        <input type="text" aria-label="Last name" class="form-control" name="lastName" #lastName="ngModel"
+          [(ngModel)]="user.lastName" required>
+      </div>
+      <div class="alert alert-danger" *ngIf="firstName.dirty && firstName.invalid">
+        <strong>Oh snap!</strong>
+        First Name can't be empty !
+      </div>
+      <div class="alert alert-danger" *ngIf="lastName.dirty && lastName.invalid">
+        <strong>Oh snap!</strong>
+        Last Name can't be empty !
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" placeholder="Enter email" name="emailId" #emailId="ngModel"
+        [(ngModel)]="user.emailId" required>
+      <div class="alert alert-danger" *ngIf="emailId.dirty && emailId.invalid">
+        <strong>Oh snap!</strong>
+        Email ID can't be empty !
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <input type="number" class="form-control" placeholder="Enter mobile number" name="mobileNo" #mobileNo="ngModel"
+        [(ngModel)]="user.mobileNo" required>
+      <div class="alert alert-danger" *ngIf="mobileNo.dirty && mobileNo.invalid">
+        <strong>Oh snap!</strong>
+        Mobile Number can't be empty !
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="pwd" #pwd="ngModel"
+        [(ngModel)]="user.pwd" required>
+      <div class="alert alert-danger" *ngIf="pwd.dirty && pwd.invalid">
+        <strong>Oh snap!</strong>
+        Password can't be empty !
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="signUpForm.pristine || signUpForm.invalid">Sign
+      Up</button>
+
+  </form>
+
+  <div class="alert alert-success mt-3" *ngIf="successFlag">
+    <i class="fas fa-circle-notch fa-spin fa-lg mr-3"></i>
+    <strong>Hang On!</strong> You are being redirected to the home page.
+  </div>
+
+  <div class="alert alert-danger mt-3" *ngIf="errorFlag">
+    <i class="fas fa-exclamation-circle fa-lg mr-3"></i>
+    <strong>Oops!</strong> Couldn't create an account. Please try again !
+  </div>
+
+</div>

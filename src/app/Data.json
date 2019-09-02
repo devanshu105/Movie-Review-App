@@ -1,0 +1,14 @@
+ {
+       "movieId":0,
+       "movieTitle":"Mask",
+       "movieRating":6.9,
+       "releaseDate":"1994-07-28",
+       "movieLang":"English",
+       "movieDuration":101,
+       "movieCategory":"Comedy",
+       "movieDesc":"Stanley, an easy-going bank employee, becomes a crazy green-skinned being who can bend reality after wearing a wooden mask, inhabited by Loki, a Norse god.",
+       "movieActors":"Jim Carrey,Cameron Diaz",
+       "movieDirector":"Chuck Russell",
+       "movieProducer":"Bob Engelman",
+       "moviePoster":"Poster1.jpg"
+}
