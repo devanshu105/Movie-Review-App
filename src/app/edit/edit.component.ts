@@ -27,7 +27,7 @@ export class EditComponent implements OnInit {
 
   editPost(editForm) {
 
-    var obj: Post = new Post()
+    let obj: Post = new Post()
 
     obj.id = this.editedPost.id
     obj.title = editForm.form.value.title
@@ -41,7 +41,7 @@ export class EditComponent implements OnInit {
         this.service.posts[this.index].body = obj.body
         editForm.form.markAsPristine()
         this.successFlag = true
-      })
+      });
   }
 
 }

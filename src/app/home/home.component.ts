@@ -16,11 +16,11 @@ export class HomeComponent implements OnInit {
 
   constructor(public router: Router, public authService: AuthenticateService, public postsService: PostsService) {
 
-    this.progressFlag = true
+    this.progressFlag = true;
 
-    var sub = this.router.events.subscribe((event: Event) => {
+    let sub = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd && !authService.loginStatus) {
-        router.navigateByUrl('/signin').then(res => sub.unsubscribe())
+        router.navigateByUrl('/signin').then(res => sub.unsubscribe());
       }
       else {
         this.progressFlag = true
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   postCopy(post: Post) {
-    var obj: Post = new Post()
+    let obj: Post = new Post()
     obj.id = post.id
     obj.title = post.title
     obj.body = post.body
